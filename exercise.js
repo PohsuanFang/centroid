@@ -26,9 +26,26 @@ var calculateCentroid = function(points){
     //----------------------------------
     //  YOUR CODE
     //----------------------------------    
+// var output={};
+// var xsum=points.reduce(function(previous,current){previous+=current.x;
+// return previous;},0);
+// var yavg=xsum/(points.length);
+// var ysum=points.reduce(function(previous,current){previous+=current.y;
+//     return previous;},0);
+//     var yavg=ysum/(points.length);
+//     // return centroid with the following format
+//     // return {x:10, y:30};  
 
-    // return centroid with the following format
-    // return {x:10, y:30};  
+var length= points.length;
+var xSum=0;
+var ySum=0;
+points.forEach(function(point){
+    xSum+=point.x;
+    ySum+=point.y;
+});
+var xCentroid= xSum/length;
+var yCentroid= ySum/length;
+return {x:Math.floor(xCentroid),y:Math.floor(yCentroid)};
 };
 
 
